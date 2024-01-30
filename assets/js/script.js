@@ -23,7 +23,9 @@ async function checkWeather(city) {
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + '°C';
         document.querySelector(".humidity").innerHTML = data.main.humidity + '%';
-        document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + 'km/h';
+        document.querySelector(".wind").innerHTML = `${Math.round(data.wind.speed)}m/s ${getDirectionName(data.wind.deg)}`;
+        document.getElementsByClassName("wind-icon")[0].style.rotate = `${-90 + data.wind.deg}deg`;
+        console.log(data.wind.deg);
 
         if (data.weather[0].main == "Clouds") {
             weatherIcon[0].src = "assets/images/clouds.png";
@@ -38,6 +40,26 @@ async function checkWeather(city) {
         }
 
         weather.style.display = 'block';
+    }
+}
+
+function getDirectionName(windDeg) {
+    if ((windDeg >= 337.5) || (windDeg < 22.5)){
+        return 'N';
+    } else if ((windDeg >= 22.5) && (windDeg < 67.5)){
+        return 'NE';
+    } else if ((windDeg >= 67.5) && (windDeg < 112.5)){
+        return 'E';
+    } else if ((windDeg >= 112.5) && (windDeg < 157.5)){
+        return 'SE';
+    } else if ((windDeg >= 157.5) && (windDeg < 202.5)){
+        return 'S';
+    } else if ((windDeg >= 202.5) && (windDeg < 247.5)){
+        return 'SW';
+    } else if ((windDeg >= 247.5) && (windDeg < 292.5)){
+        return 'W';
+    } else if ((windDeg >= 292.5) && (windDeg < 337.5)){
+        return 'NW';
     }
 }
 
