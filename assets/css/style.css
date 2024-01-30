@@ -12,13 +12,16 @@ body {
 
 .card {
     width: 90%;
-    max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
     margin: 20px;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .search {
@@ -26,6 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 470px;
 }
 
 .search input {
@@ -81,6 +85,7 @@ body {
     display: flex;
     align-items: center;
     text-align: left;
+    margin: 0 10px;
 }
 
 .col img {

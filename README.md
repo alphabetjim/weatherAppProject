@@ -10,8 +10,9 @@ This is based on [this video](https://www.youtube.com/watch?v=MIYQR-Ybrn4).
 ### Still to come
 - Responsiveness so that this displays nicely on screen sizes other than small (phones).
 - Would be nice to display the wind direction, maybe by rotating the wind image.
+- Additional forecast, i.e. for the next 5 days
 
 ## Credits:
 
 Weather data from (https://openweathermap.org/).
-Humidity, clouds, drizzle, mist, wind,  icons from (https://www.flaticon.com/).
+Weather icons from (https://www.flaticon.com/).
