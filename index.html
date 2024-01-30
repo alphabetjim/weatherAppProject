@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <div class="card">
+        <div class="search">
+            <input type="text" name="" id="" placeholder="enter city name" spellcheck="false">
+            <button><i class="fa-solid fa-2xl fa-magnifying-glass"></i></button>
+        </div>
+        <div class="weather">
+            <img class="weather-icon" src="assets/images/rain-cloud-icon-4.png" alt="A weather icon" srcset="">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">Bristol</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="assets/images/humidity.png" alt="Humidity" srcset="">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="assets/images/wind-icon.png" alt="Wind" srcset="">
+                    <div>
+                        <p class="wind">10 mph</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/f13bffb293.js" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
