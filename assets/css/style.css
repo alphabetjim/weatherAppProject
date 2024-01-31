@@ -12,6 +12,7 @@ body {
 
 .card {
     width: 90%;
+    max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
     margin: 20px;
@@ -73,6 +74,37 @@ body {
     margin-top: -10px;
 }
 
+.forecast {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.weather-forecast {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 1%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 90%;
+}
+
+.weather-forecast h1 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.weather-forecast h2 {
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.weather-forecast h3 {
+    font-size: 25px;
+    font-weight: 300;
+}
+
 .details {
     display: flex;
     align-items: center;
@@ -98,7 +130,7 @@ body {
     margin-top: -6px;
 }
 
-.weather {
+.weather-now, .weather-forecast {
     display: none;
 }
 
