@@ -5,8 +5,8 @@ const API_URL_keyEtc = `&appid=${API_KEY}&units=metric`;
 
 const searchBox = document.querySelector('.search input');
 const searchBtn = document.querySelector('.search button');
-const weatherIcon = document.getElementsByClassName('weather-icon');
-const weather = document.getElementsByClassName('weather')[0];
+const weatherIcon = document.getElementsByClassName('weather-icon-now');
+const weather = document.getElementsByClassName('weather-now')[0];
 const errorMsg = document.getElementsByClassName('error')[0];
 
 async function checkWeather(city) {
@@ -22,11 +22,12 @@ async function checkWeather(city) {
     } else{
         errorMsg.style.display = 'none';
         
+        // Update weather now
         document.querySelector(".city").innerHTML = data.city.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.list[0].main.temp) + '°C';
-        document.querySelector(".humidity").innerHTML = data.list[0].main.humidity + '%';
-        document.querySelector(".wind").innerHTML = `${Math.round(data.list[0].wind.speed)}m/s ${getDirectionName(data.list[0].wind.deg)}`;
-        document.getElementsByClassName("wind-icon")[0].style.rotate = `${-90 + data.list[0].wind.deg}deg`;
+        document.querySelector(".temp-now").innerHTML = Math.round(data.list[0].main.temp) + '°C';
+        document.querySelector(".humidity-now").innerHTML = data.list[0].main.humidity + '%';
+        document.querySelector(".wind-now").innerHTML = `${Math.round(data.list[0].wind.speed)}m/s ${getDirectionName(data.list[0].wind.deg)}`;
+        document.getElementsByClassName("wind-icon-now")[0].style.rotate = `${-90 + data.list[0].wind.deg+180}deg`;
         console.log(data.list[0].wind.deg);
 
         if (data.list[0].weather[0].main == "Clouds") {
@@ -41,8 +42,45 @@ async function checkWeather(city) {
             weatherIcon[0].src = "assets/images/mist.png";
         }
 
+        console.log(weather);
         weather.style.display = 'block';
+
+        // Update forecast weather
+        for (let i=1; i<5; i++){
+            updateForecast(data, i, 8*i);
+        }
     }
+}
+
+// update forecast at given time stamp index
+function updateForecast(data, forecastID, timestampID) {
+    // console.log(data.list[0].dt);
+    let thisDate = new Date(data.list[timestampID].dt*1000);
+    console.log(thisDate);
+    console.log(typeof thisDate);
+    let dateTimeEntry = `${thisDate.getDate()}/${thisDate.getMonth()+1} ${thisDate.getHours()}:00`;
+    document.getElementsByClassName(`time-forecast${forecastID}`)[0].innerHTML = dateTimeEntry;
+    // document.querySelector(".city").innerHTML = data.city.name;
+    document.querySelector(`.temp-forecast${forecastID}`).innerHTML = Math.round(data.list[timestampID].main.temp) + '°C';
+    document.querySelector(`.humidity-forecast${forecastID}`).innerHTML = data.list[timestampID].main.humidity + '%';
+    document.querySelector(`.wind-forecast${forecastID}`).innerHTML = `${Math.round(data.list[timestampID].wind.speed)}m/s ${getDirectionName(data.list[timestampID].wind.deg)}`;
+    document.getElementsByClassName(`wind-icon-forecast${forecastID}`)[0].style.rotate = `${-90 + data.list[timestampID].wind.deg+180}deg`;
+    console.log(data.list[timestampID].wind.deg);
+    
+    if (data.list[timestampID].weather[0].main == "Clouds") {
+        document.getElementsByClassName(`weather-icon-forecast${forecastID}`)[0].src = "assets/images/clouds.png";
+    } else if (data.list[timestampID].weather[0].main == "Clear") {
+        document.getElementsByClassName(`weather-icon-forecast${forecastID}`)[0].src = "assets/images/sun.png";
+    } else if (data.list[timestampID].weather[0].main == "Rain") {
+        document.getElementsByClassName(`weather-icon-forecast${forecastID}`)[0].src = "assets/images/rain.png";
+    } else if (data.list[timestampID].weather[0].main == "Drizzle") {
+        document.getElementsByClassName(`weather-icon-forecast${forecastID}`)[0].src = "assets/images/drizzle.png";
+    } else if (data.list[timestampID].weather[0].main == "Mist") {
+        document.getElementsByClassName(`weather-icon-forecast${forecastID}`)[0].src = "assets/images/mist.png";
+    }
+    let thisWeather = document.getElementsByClassName(`wf${forecastID}`)[0];
+    console.log(thisWeather);
+    thisWeather.style.display = 'block';
 }
 
 function getDirectionName(windDeg) {

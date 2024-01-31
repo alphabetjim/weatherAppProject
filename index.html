@@ -7,34 +7,111 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="search">
+        <input type="text" name="" id="" placeholder="enter city name" spellcheck="false">
+        <button><i class="fa-solid fa-2xl fa-magnifying-glass"></i></button>
+    </div>
+    <div class="error">
+        <p>Invalid city name</p>
+    </div>
     <div class="card">
-        <div class="search">
-            <input type="text" name="" id="" placeholder="enter city name" spellcheck="false">
-            <button><i class="fa-solid fa-2xl fa-magnifying-glass"></i></button>
-        </div>
-        <div class="error">
-            <p>Invalid city name</p>
-        </div>
-        <div class="weather">
-            <img class="weather-icon" src="assets/images/rain-cloud-icon-4.png" alt="A weather icon" srcset="">
-            <h1 class="temp">22°C</h1>
+        <div class="weather weather-now">
+            <img class="weather-icon weather-icon-now" src="assets/images/clouds.png" alt="A weather icon" srcset="">
+            <h1 class="temp temp-now">22°C</h1>
             <h2 class="city">Bristol</h2>
             <div class="details">
                 <div class="col">
                     <img src="assets/images/humidity.png" alt="Humidity" srcset="">
                     <div>
-                        <p class="humidity">50%</p>
-                        <p>Humidity</p>
+                        <p class="humidity humidity-now">50%</p>
                     </div>
                 </div>
                 <div class="col">
-                    <img class="wind-icon" src="assets/images/wind.png" alt="Wind" srcset="">
+                    <img class="wind-icon wind-icon-now" src="assets/images/wind.png" alt="Wind" srcset="">
                     <div>
-                        <p class="wind">10 mph</p>
-                        <p>Wind Speed</p>
+                        <p class="wind wind-now">10 mph</p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="forecast">
+            <div class="weather-forecast wf1">
+                <h1 class="time time-forecast1">1/1 12:00</h1>
+                <img class="forecast-icon weather-icon-forecast1" src="assets/images/rain.png" alt="A weather icon" srcset="">
+                <h2 class="temp temp-forecast1">22°C</h2 >
+                <div class="details-forecast details-forecast1">
+                    <div class="col">
+                        <img src="assets/images/humidity.png" alt="Humidity" srcset="">
+                        <div>
+                            <p class="humidity-forecast humidity-forecast1">50%</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img class="wind-icon wind-icon-forecast1" src="assets/images/wind.png" alt="Wind" srcset="">
+                        <div>
+                            <p class="wind-forecast wind-forecast1">10 mph</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-forecast wf2">
+                <h1 class="time time-forecast2">2/1 12:00</h1>
+                <img class="forecast-icon weather-icon-forecast2" src="assets/images/rain.png" alt="A weather icon" srcset="">
+                <h2 class="temp temp-forecast2">22°C</h2 >
+                <div class="details-forecast details-forecast2">
+                    <div class="col">
+                        <img src="assets/images/humidity.png" alt="Humidity" srcset="">
+                        <div>
+                            <p class="humidity-forecast humidity-forecast2">50%</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img class="wind-icon wind-icon-forecast2" src="assets/images/wind.png" alt="Wind" srcset="">
+                        <div>
+                            <p class="wind-forecast wind-forecast2">10 mph</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-forecast wf3">
+                    <h1 class="time time-forecast3">3/1 12:00</h1>
+                    <img class="forecast-icon weather-icon-forecast3" src="assets/images/rain.png" alt="A weather icon" srcset="">
+                    <h2 class="temp temp-forecast3">22°C</h2 >
+                    <div class="details-forecast details-forecast3">
+                        <div class="col">
+                            <img src="assets/images/humidity.png" alt="Humidity" srcset="">
+                            <div>
+                                <p class="humidity-forecast humidity-forecast3">50%</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img class="wind-icon wind-icon-forecast3" src="assets/images/wind.png" alt="Wind" srcset="">
+                            <div>
+                                <p class="wind-forecast wind-forecast3">10 mph</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="weather-forecast wf4">
+                <h1 class="time time-forecast4">4/1 12:00</h1>
+                <img class="forecast-icon weather-icon-forecast4" src="assets/images/rain.png" alt="A weather icon" srcset="">
+                <h2 class="temp temp-forecast4">22°C</h2 >
+                <div class="details-forecast details-forecast4">
+                    <div class="col">
+                        <img src="assets/images/humidity.png" alt="Humidity" srcset="">
+                        <div>
+                            <p class="humidity-forecast humidity-forecast4">50%</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img class="wind-icon wind-icon-forecast4" src="assets/images/wind.png" alt="Wind" srcset="">
+                        <div>
+                            <p class="wind-forecast wind-forecast4">10 mph</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <!-- font awesome -->
