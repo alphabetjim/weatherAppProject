@@ -112,5 +112,3 @@ window.addEventListener('keydown', (e) => {
         checkWeather(searchBox.value);
     }
 })
-
-document.addEventListener('load', checkWeather("Bristol, UK"));

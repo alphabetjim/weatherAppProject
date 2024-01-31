@@ -9,7 +9,9 @@ body {
     background: #222;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #00feba, #5b548a);
+    background-color: #48b4c7;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 p {
@@ -66,6 +68,7 @@ p {
 
 .weather {
     width: 90%;
+    background-color: rgba(0,0,0,0.2);
 }
 
 .weather-icon {
@@ -75,12 +78,13 @@ p {
 
 .forecast-icon {
     width: 170px;
-    margin-top: 30px;
 }
 
 .weather h1 {
     font-size: 80px;
     font-weight: 500;
+    margin-top: 0.1em;
+    margin-bottom: 0.5em;
 }
 
 .weather h2 {
@@ -113,11 +117,6 @@ p {
 
 .weather-forecast h2 {
     font-size: 33px;
-    font-weight: 300;
-}
-
-.weather-forecast h3 {
-    font-size: 20px;
     font-weight: 300;
 }
 
@@ -154,7 +153,7 @@ p {
 }
 
 .weather-now, .weather-forecast {
-    /* display: none; */
+    display: none;
 }
 
 .error {
