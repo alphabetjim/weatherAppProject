@@ -124,7 +124,7 @@ p {
 .details {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0 20px;
     margin-top: 50px;
 }
